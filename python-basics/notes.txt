@@ -1,0 +1,16 @@
+this is just the beginning, I want to take over the world but I have to say hello first. 
+ the first script hello was pretty easyy. 
+ the second script was math and not so challenging. 
+ I will try a password generator next. random numbers and letters. 
+ wow. that was a bit confusing but it worked. I want to exclude special character though. its not really applicatable using `'
+ now users choose if they want it or not with the if condition. 
+ and now no error or errors in the code. 
+ I want to try a guessing game of random numbers (too high or too low output). I will write my experience. Let's gooooo 
+ file reader now.
+ file downloaded successfully
+ login failed.
+ access denied
+ access granted
+ user authenticated
+ welcome
+ session started

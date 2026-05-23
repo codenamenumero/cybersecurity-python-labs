@@ -1,0 +1,3 @@
+success : access granted, login successful, welcome, user authenticated, session started, connection established, authentication successful, user logged in, login accepted, login ok, access allowed
+failure : access denied, login failed, failed, authentication failed, user not found, session failed, connection refused, login rejected, access blocked, authentication error, user locked out
+        

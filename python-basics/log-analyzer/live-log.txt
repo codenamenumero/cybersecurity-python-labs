@@ -1,0 +1,4 @@
+system started
+access granted user admin
+access denied user guest
+error system crash
