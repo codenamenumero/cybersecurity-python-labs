@@ -1,30 +1,41 @@
 import socket
+from datetime import datetime
+from colorama import Fore, init, Style
+
+init(autoreset=True)
 
 HOST = '127.0.0.1'
 PORT = 5555
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 server.bind((HOST, PORT))
 server.listen()
 
-print(f"[LISTENING] Server is listening on {HOST}:{PORT}")
+print(Fore.GREEN + f"[LISTENING] Server is listening on {HOST}:{PORT}")
 
 conn, addr = server.accept()
 
-print(f"[NEW CONNECTION] {addr} connected.")
+print(Fore.CYAN + f"[NEW CONNECTION] {addr} connected.")
+
+username = conn.recv(1024).decode()
+
+print (Fore.YELLOW + f"[USERNAME] {username} joined the chat.")
 
 while True:
     try:
         message = conn.recv(1024)
 
         if not message:
-            print(f"[DISCONNECTED] {addr} Client disconnected.")
+            print(Fore.RED + f"[DISCONNECTED] {addr} Client disconnected.")
             break
 
-        decoded_message = message.decode()
-        print(f"[{addr}]: {decoded_message}")
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-        reply = input("[YOU]: ")
+        decoded_message = message.decode()
+        print(Fore.BLUE + f"[{current_time}] {username}: {decoded_message}")
+
+        reply = input(Fore.GREEN + "[SERVER]: ")
         conn.send(reply.encode())
 
     except Exception as e:
@@ -32,6 +43,6 @@ while True:
         break
 
 conn.close()
-print("[CLOSED] Connection closed.")
+print(Fore.RED + "[CLOSED] Connection closed.")
 server.close()
-print("[SHUTDOWN] Server shutdown.")
+print(Fore.RED + "[SHUTDOWN] Server shutdown.")
