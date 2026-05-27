@@ -1,0 +1,11 @@
+Future Improvements
+Planned upgrades include:
+ - UDP scanning
+ - CIDR subnet scanning
+ - Progress bars
+ - CSV export
+ - OS fingerprinting
+ - Async semaphore tuning
+ - GUI interface
+ - Advanced service fingerprinting
+ 
